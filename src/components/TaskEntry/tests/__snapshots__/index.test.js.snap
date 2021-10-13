@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TaskEntry /> component tests -> should render the component and match snapshot: baseElement 1`] = `
+<body>
+  <div>
+    <div
+      class="task-entry-container"
+    >
+      <input
+        data-testid="task-entry-test-id"
+        id="task-entry"
+        placeholder="Write your new task here !"
+        type="text"
+      />
+      <img
+        alt="add_task_button"
+        data-testid="add-task-button-test-id"
+        src="../add_task_button.png"
+      />
+    </div>
+  </div>
+</body>
+`;

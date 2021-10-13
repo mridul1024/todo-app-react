@@ -1,0 +1,26 @@
+.task-list-container {
+  display: flex;
+  width: 70vw;
+  margin-left: 30%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.task-list-container img {
+  width: 20px;
+  height: 20px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.task-list-container p {
+  font-size: 18px;
+  margin: 5px;
+}
+
+.complete-task {
+  text-decoration: line-through;
+}
+.incomplete-task {
+  text-decoration: none;
+}

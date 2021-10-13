@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TaskList /> component tests -> should render a TaskList component and match snapshot: baseElement 1`] = `
+<body>
+  <div>
+    <div
+      class="task-list-container"
+    >
+      <img
+        alt="task_checkbox"
+        data-testid="task-list-checkbox"
+        src="../task_incomplete_checkbox.png"
+      />
+      <p
+        class="incomplete-task"
+        data-testid="task-list-placeholder"
+      >
+        My first task
+      </p>
+    </div>
+  </div>
+</body>
+`;

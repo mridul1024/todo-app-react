@@ -1,0 +1,29 @@
+.task-entry-container {
+  margin-top: 20vh;
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 5px solid #00526c;
+  border-bottom: 5px solid #00526c;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.task-entry-container input {
+  margin-left: 30%;
+  padding-right: 50px;
+  width: 400px;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.task-entry-container input:focus {
+  outline: none;
+}
+
+.task-entry-container img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}

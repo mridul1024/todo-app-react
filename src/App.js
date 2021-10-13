@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+// import { React, Component } from "react";
+import TaskEntry from "./components/TaskEntry";
+import TaskList from "./components/TaskList";
+import "./App.css";
 
-function App() {
+import { React, useState } from "react";
+
+export default function App() {
+  const [task, settask] = useState([]);
+
+  const addTask = () => {
+    let newTask = document.getElementById("task-entry").value;
+    if (newTask !== "") {
+      settask([
+        ...task,
+        {
+          taskTitle: document.getElementById("task-entry").value,
+          currentStatus: "0",
+        },
+      ]);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TaskEntry
+        InsertTask={() => {
+          addTask();
+        }}
+      ></TaskEntry>
+      <p className="task-list-header">
+        Tasks <img src="../down_arrow_icon.png" alt="down-arrow" />
+      </p>
+
+      <ul data-testid="task-list-ul">
+        {task.length === 0 ? (
+          <p className="no-task-text">Your tasks will show up here</p>
+        ) : (
+          task.map((element, index) => (
+            <li key={index.toString()} data-testid="task-list-li">
+              <TaskList
+                task={element.taskTitle}
+                taskStatus={element.currentStatus}
+                changeStatus={() => {
+                  const newTasks = task.slice();
+                  newTasks[index].currentStatus === "0"
+                    ? (newTasks[index].currentStatus = "1")
+                    : (newTasks[index].currentStatus = "0");
+                  settask(newTasks);
+                }}
+              ></TaskList>
+            </li>
+          ))
+        )}
+      </ul>
     </div>
   );
 }
-
-export default App;
